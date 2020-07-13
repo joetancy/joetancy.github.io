@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "Joe Tan"
   avatar : "/assets/images/bio-photo.jpeg"
-  bio    : "I am eager to learn things with a passion for new technologies. I build applications and fix bugs. I learn photography in my free time. I am also a great DevOps engineer. 27 Singaporean Male."
+  bio    : "I am eager to learn things with a passion for new technologies. I build applications :computer: and fix bugs :bug:. I learn photography :camera: in my free time. I am also a great DevOps engineer :wrench:."
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter"
@@ -81,7 +81,7 @@ author:
 footer:
   links:
     - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+      icon: "fab fa-fw fa-twitter"
       url: "https://twitter.com/joetancy"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -89,6 +89,12 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/joetancy"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook"
+      url: "https://facebook.com/joetancy"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/joetancy"
 
 defaults:
   # _posts
