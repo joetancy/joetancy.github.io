@@ -58,7 +58,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Joe Tan"
+  name   : "Joe Tan :wave:"
   avatar : "/assets/images/bio-photo.jpeg"
   bio    : "I am eager to learn things with a passion for new technologies. I build applications :computer: and fix bugs :bug:. I learn photography :camera: in my free time. I am also a great DevOps engineer :wrench:."
   links:
