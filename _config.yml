@@ -58,10 +58,7 @@ plugins:
 author:
   name   : "Joe Tan :wave:"
   avatar : "/assets/images/bio-photo.jpeg"
-  bio    : "I build applications :computer: and fix bugs :bug:. I learn photography :camera: in my free time. I am also a great DevOps engineer :wrench:.
-  ![visitors](https://visitor-badge.glitch.me/badge?page_id=joetancy.joetancy.github.io)
-![GitHub last commit](https://img.shields.io/github/last-commit/joetancy/joetancy.github.io)
-  "
+  bio    : "I build applications :computer: and fix bugs :bug:. I learn photography :camera: in my free time. I am also a great DevOps engineer :wrench:."
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter"
