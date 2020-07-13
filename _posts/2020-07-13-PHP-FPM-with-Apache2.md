@@ -4,7 +4,6 @@ date: 2020-07-13T17:23:30-04:00
 categories:
   - blog
 ---
-## PHP-FPM with Apache2
 
 Processing PHP is slow and clunky on Apache Modules, therefore people move to NGINX for higher HTTP response concurrency.
 
@@ -19,7 +18,8 @@ This guide assumes you are operating on Ubuntu 18.04 LTS
 ### Installing PHP-FPM
 
 ```bash
-sudo apt install python-software-properties sudo add-apt-repository ppa:ondrej/php
+sudo apt install python-software-properties 
+sudo add-apt-repository ppa:ondrej/php
 apt update
 sudo apt install php7.3 php7.3-fpm php7.3-curl php7.3-mysql php7.3-xmlrpc php7.3-bcmath php7.3-mbstring php7.3-xml
 ```
@@ -35,16 +35,22 @@ You should be able to see something like this.
 ```bash
 php7.3-fpm.service - The PHP 7.3 FastCGI Process Manager Loaded: loaded (/lib/systemd/system/php7.3-fpm.service;
 enabled; vendor preset: enabled)
-Active: 17min ago
-Docs: Main PID: Status:
-active (running) since Tue 2019-07-23 03:28:26 UTC;
-man:php-fpm7.3(8)
-30011 (php-fpm7.3)
-"Processes active: 38, idle: 3, Requests: 20367, slow:
+Active: active (running) since Tue 2019-07-23 03:28:26 UTC; 17min ago
+Docs: man:php-fpm7.3(8)
+Main PID: 30011 (php-fpm7.3)
+Status: "Processes active: 38, idle: 3, Requests: 20367, slow:
 0, Traffic: 17.2req/sec"
-Tasks: CGroup:
-102 (limit: 4915) /system.slice/php7.3-fpm.service ├─10217 php-fpm: pool www ├─10277 php-fpm: pool www ├─10278 php-fpm: pool www └─30011 php-fpm: master process
+
+Tasks: 102 (limit: 4915)
+CGroup: /system.slice/php7.3-fpm.service
+        ├─10217 php-fpm: pool www 
+        ├─10277 php-fpm: pool www 
+        ├─10278 php-fpm: pool www 
+        └─30011 php-fpm: master process
 (/etc/php/7.3/fpm/php-fpm.conf)
+
+Jul 23 03:28:26 systemd[1]: Starting The PHP 7.3 FastCGI Process Manager...
+Jul 23 03:28:26 systemd[1]: Started The PHP 7.3 FastCGI Process Manager.
 ```
 
 ### Configuring Apache2
@@ -59,9 +65,15 @@ Edit the Apache configuration file to route the processing. (Also edit for 000-d
 
 ```bash
 sudo nano /etc/apache2/sites-available/000-default.conf
+```
+
 Add these lines into this file
-<FilesMatch \.php$> SetHandler
-"proxy:unix:/run/php/php7.3-fpm.sock|fcgi://localhost/" </FilesMatch>
+
+```bash
+<FilesMatch \.php$> 
+    SetHandler
+"proxy:unix:/run/php/php7.3-fpm.sock|fcgi://localhost/" 
+</FilesMatch>
 ```
 Make sure your .sock is in the correct path
 
